@@ -3,15 +3,18 @@
 mainWidget::mainWidget(QWidget *parent)
     : QWidget(parent)
 {
-    this->resize(480,270);
-    this->setMaximumSize(480,270);  //设置最大尺寸后，将不能最大化
-    this->setMinimumSize(100,100); //设置最小尺寸，显示尺寸只能这么小，可以最小化；MinimumSize > MaxmumSize, 以MinimumSize为尺寸，且不能放大，缩小
+    this->setMinimumSize(400, 780);
+    //this->resize(480,270);
+    //this->setMaximumSize(480,270);  //设置最大尺寸后，将不能最大化
+    //this->setMinimumSize(100,100); //设置最小尺寸，显示尺寸只能这么小，可以最小化；MinimumSize > MaxmumSize, 以MinimumSize为尺寸，且不能放大，缩小
     this->setWindowIcon(QIcon(":/new/prefix1/img/icon.png"));   //调用资源图片的格式
-    this->setWindowTitle("贪吃蛇");
+    //this->setWindowTitle("贪吃蛇");
+    //绘制背景
     QPalette palette;
     palette.setBrush(QPalette::Background,QBrush(QPixmap(":/new/prefix1/img/back.jpg").scaled(this->size())));
     this->setPalette(palette);
 
+    //开始按钮
     startbtn=new QPushButton(this);
     startbtn->setIcon(QIcon(":/new/prefix1/img/start.png"));
     startbtn->setIconSize(QSize(75,75));
@@ -62,6 +65,6 @@ void mainWidget::startSlot()
     QPalette palette;
     palette.setBrush(QPalette::Background,QBrush(QPixmap("img/back.jpg").scaled(this->size())));
     this->setPalette(palette);
-    startbtn->setGeometry(QRect(this->size().width()-230,this->size().height()-100,75,75));
+    startbtn->setGeometry(QRect(this->size().width()-s230,this->size().height()-100,75,75));
     exitbtn->setGeometry(QRect(this->size().width()-130,this->size().height()-100,70,70));
 }*/
